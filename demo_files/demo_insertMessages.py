@@ -5,9 +5,11 @@ import loremipsum
 randomSubjects = loremipsum.get_sentences(1000)
 contacts = ['David', 'Jason', 'Michael', 'Julian', 'Coleman', 'Adam', 'Julia', 'Mary', 'Eve', 'Samantha']
 
-dynamodb = boto3.resource("dynamodb", region_name='us-east-1')
+dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 messages = dynamodb.Table('messages')
 messageBodys = dynamodb.Table('messagebody')
+
+print("Sending 1000 messages to the server")
 
 for i in range(1):
     # Create a random date
@@ -36,7 +38,7 @@ for i in range(1):
         }
     )
 
-print("Items in messages table:")
+print("Messages table:")
 print(messages)
-print("Items in message body table:")
+print("Message body table:")
 print(messageBodys)

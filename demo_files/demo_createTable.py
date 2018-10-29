@@ -2,7 +2,7 @@
 # https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
 import boto3
 
-dynamodb = boto3.resource("dynamodb", region_name='us-east-1')
+dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 
 print("Creating messages table")
 messages = dynamodb.create_table(

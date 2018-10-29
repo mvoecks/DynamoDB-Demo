@@ -1,6 +1,6 @@
 import boto3
 
-dynamodb = boto3.resource("dynamodb", region_name='us-east-1')
+dynamodb = boto3.resource("dynamodb", region_name='us-west-2')
 
 print("Deleting the messages table")
 messages = dynamodb.Table('messages')
