@@ -1,3 +1,3 @@
 #!/bin/bash
-python demo_createTable.py
-python demo_insertMessages.py
+python demo_files/demo_createTable.py
+python demo_files/demo_insertMessages.py
