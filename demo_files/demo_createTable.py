@@ -48,7 +48,7 @@ messagebody = dynamodb.create_table(
     AttributeDefinitions=[
         {
             'AttributeName': 'msgId',
-            'AttributeType': 'N'
+            'AttributeType': 'S'
         }
     ],
     ProvisionedThroughput={

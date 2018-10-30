@@ -11,7 +11,7 @@ messageBodys = dynamodb.Table('messagebody')
 
 print("Sending 1000 messages to the server")
 
-for i in range(1):
+for i in range(1000):
     # Create a random date
     randomDay = random.randint(1, 28)
     randomMonth = random.randint(1, 12)
@@ -21,24 +21,20 @@ for i in range(1):
     # Choose Recipient and Sender
     recipient = random.choice(contacts)
     sender = random.choice([x for x in contacts if x != recipient])
-    
+
     messages.put_item(
         Item = {
             'recipient': recipient,
             'date': date,
             'sender': sender,
             'subject': randomSubjects[i],
-            'msgId': i
+            'msgId': str(i)
         }
     )
     messageBodys.put_item(
         Item = {
-            'msgId': i,
+            'msgId': str(i),
             'msgBody': loremipsum.generate_paragraph()[2]
         }
     )
-
-print("Messages table:")
-print(messages)
-print("Message body table:")
-print(messageBodys)
+print("1000 messages sent")
